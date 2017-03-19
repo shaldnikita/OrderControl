@@ -76,9 +76,9 @@ public class Main extends javax.swing.JFrame {
         connection.getBouquetOrderList().forEach((p) -> {
             addRowToTable(p);
             orders.put(p.getId(), p);
-        });
+        });       
     }
-
+      
     private void addRowToTable(BouquetOrder order) {
         DefaultTableModel model = (DefaultTableModel) mainTable.getModel();
         model.addRow(createNewRow(order));
@@ -161,6 +161,7 @@ public class Main extends javax.swing.JFrame {
         });
         mainTable.setToolTipText("");
         mainTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        mainTable.setColumnSelectionAllowed(true);
         mainTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         mainTable.setOpaque(false);
         mainTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
