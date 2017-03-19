@@ -39,5 +39,6 @@ public class OtherTests {
          
          Status s = (Status)b;
      }
+     
 
 }

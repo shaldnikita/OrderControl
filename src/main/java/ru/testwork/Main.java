@@ -89,7 +89,7 @@ public class Main extends javax.swing.JFrame {
         row[0] = order.getId();
         row[1] = order.getCustomer();
         SimpleDateFormat sdf;
-        sdf = new SimpleDateFormat("DD MMMM YYYY");
+        sdf = new SimpleDateFormat("dd MMMM YYYY");
         row[2] = sdf.format(order.getDoUntil());
         row[3] = order.getQuantity();
         row[4] = order.getWishes();
