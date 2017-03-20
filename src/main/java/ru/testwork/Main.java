@@ -1,5 +1,6 @@
 package ru.testwork;
 
+import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Image;
 import java.io.File;
@@ -12,6 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -300,6 +302,7 @@ public class Main extends javax.swing.JFrame {
 
         isReadyCheckButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         isReadyCheckButton.setText("Готово");
+        isReadyCheckButton.setOpaque(false);
 
         javax.swing.GroupLayout infoPanelLayout = new javax.swing.GroupLayout(infoPanel);
         infoPanel.setLayout(infoPanelLayout);
