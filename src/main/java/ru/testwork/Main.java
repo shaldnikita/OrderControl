@@ -78,9 +78,9 @@ public class Main extends javax.swing.JFrame {
         connection.getBouquetOrderList().forEach((p) -> {
             addRowToTable(p);
             orders.put(p.getId(), p);
-        });       
+        });
     }
-      
+
     private void addRowToTable(BouquetOrder order) {
         DefaultTableModel model = (DefaultTableModel) mainTable.getModel();
         model.addRow(createNewRow(order));
@@ -484,13 +484,6 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_updateButtonActionPerformed
 
-    private void updateRowInTable() {
-        mainTable.setValueAt(wishesField.getText(), mainTable.getSelectedRow(), 4);
-        mainTable.setValueAt(spentField.getText(), mainTable.getSelectedRow(), 6);
-        mainTable.setValueAt(totalField.getText(), mainTable.getSelectedRow(), 7);
-        mainTable.setValueAt(isReadyCheckButton.isSelected() ? Status.Ready : Status.Accepted, mainTable.getSelectedRow(), 8);
-    }
-
     private void updateLocalOrderList(Long id, Optional<String> wishes, Optional<Integer> moneySpent, Optional<Integer> total, Optional<String> path, Boolean isReady) {
         BouquetOrder order = orders.get(id);
         order.setWishes(wishes.orElse(null));
@@ -498,6 +491,13 @@ public class Main extends javax.swing.JFrame {
         order.setTotal(total.orElse(null));
         order.setImgPath(path.orElse(null));
         order.setStatus(isReady ? Status.Ready : Status.Accepted);
+    }
+
+    private void updateRowInTable() {
+        mainTable.setValueAt(wishesField.getText(), mainTable.getSelectedRow(), 4);
+        mainTable.setValueAt(spentField.getText(), mainTable.getSelectedRow(), 6);
+        mainTable.setValueAt(totalField.getText(), mainTable.getSelectedRow(), 7);
+        mainTable.setValueAt(isReadyCheckButton.isSelected() ? Status.Ready : Status.Accepted, mainTable.getSelectedRow(), 8);
     }
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
